@@ -1,4 +1,7 @@
-import "style";
+---
+---
+
+@import "{{ site.theme }}";
 
 .footer {
     display: none;

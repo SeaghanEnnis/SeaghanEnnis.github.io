@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Happy Jekylling!"
+title: "Seaghan Ennis"
 ---
 
 ## You're ready to go!

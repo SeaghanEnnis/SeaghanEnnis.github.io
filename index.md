@@ -1,9 +1,8 @@
 ---
 layout: default
+title: "Happy Jekylling!"
 ---
-<style>
-  .footer {
-    display: none;
-  }
-</style>
-Testing this
+
+## You're ready to go!
+
+Start developing your Jekyll website.

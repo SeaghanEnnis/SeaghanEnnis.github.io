@@ -51,7 +51,14 @@
             margin: 0 auto;
             text-align: center;
             font-size: 2rem;
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
         }
+
+        .scroll-container::-webkit-scrollbar {
+            display: none;
+        }
+
         nav {
             display: flex;
             width: 50%;

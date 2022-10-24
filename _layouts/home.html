@@ -27,6 +27,12 @@
             width: 50%;
         }
 
+        .scrollWrapper{
+            height: 100vh;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
         footer{
             position: absolute;
             bottom: 0;
@@ -37,9 +43,11 @@
 
   </head>
   <body>
-    <h1 class="gradient-text centerText">About Me</h1>
-    {{ content }}
-    <br><br>
+    <div class="scrollWrapper">
+        <h1 class="gradient-text centerText">About Me</h1>
+        {{ content }}
+        <br><br>
+    </div>
     <footer class="site-footer">
 		{% include footer.html %} 
 	</footer>

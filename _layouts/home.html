@@ -91,17 +91,22 @@
             {% include header.html %}
         </header>
         <nav>
-            <a class="gradient-text centerText scroll-links" href="#AboutMe"><h4>About Me</h4></a>
-            <a class="gradient-text centerText scroll-links" href="#Education"><h4>Education</h4></a>
-            <a class="gradient-text centerText scroll-links" href="#Experience"><h4>Experience</h4></a>
+            <a class="gradient-text centerText scroll-links" href="#AboutMe"><h6>About Me</h6></a>
+            <a class="gradient-text centerText scroll-links" href="#Education"><h6>Education</h6></a>
+            <a class="gradient-text centerText scroll-links" href="#Experience"><h6>Experience</h6></a>
           </nav>
           <div class="scroll-container">
+            <div class="scroll-page" id="AboutMe">
+                <h6>About</h6>
+            </div>
             <hr class="hr1" />
-            <div class="scroll-page" id="AboutMe">About</div>
+            <div class="scroll-page" id="Education">
+                <h6>Education</h6>
+            </div>
             <hr class="hr1" />
-            <div class="scroll-page" id="Education">Edu</div>
-            <hr class="hr1" />
-            <div class="scroll-page" id="Experience">Work</div>
+            <div class="scroll-page" id="Experience">
+                <h6>Work</h6>
+            </div>
           </div>
           
         {{ content }}

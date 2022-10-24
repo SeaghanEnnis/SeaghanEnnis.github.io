@@ -1,8 +1,8 @@
 ---
-layout: default
-title: "Seaghan Ennis"
+layout: home
+title: "I am Seaghan Ennis"
 ---
 
-## You're ready to go!
+## I am Seaghan Ennis
 
-Start developing your Jekyll website.
+Resume

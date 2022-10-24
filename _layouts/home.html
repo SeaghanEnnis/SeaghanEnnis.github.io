@@ -11,28 +11,26 @@
 
     <style>
         .gradient-text {
-            /* Fallback: Set a background color. */
             background-color: red;
-            
-            /* Create the gradient. */
-            background-image: linear-gradient(to bottom left, #f3b178, #af4261);
-            
-            /* Set the background size and repeat properties. */
+            background-image: linear-gradient(to bottom left, rgb(255, 81, 0), rgba(255, 0, 204, 0.7), rgb(65, 0, 243));
             background-size: 100%;
             background-repeat: repeat;
-
-            /* Use the text as a mask for the background. */
-            /* This will show the gradient as a text color rather than element bg. */
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent; 
             -moz-background-clip: text;
             -moz-text-fill-color: transparent;
         }
+
+        .centerText{
+            text-align: center;
+            margin: auto;
+            width: 50%;
+        }
     </style>
 
   </head>
   <body>
-    <h1 class="gradient-text">About Me</h1>
+    <h1 class="gradient-text centerText">About Me</h1>
     {{ content }}
     <br><br>
     <footer class="site-footer">

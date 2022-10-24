@@ -34,6 +34,35 @@
             width: 100%;
         }
 
+        a {
+            display: inline-block;
+        }
+        nav,
+        .scroll-container {
+            display: block;
+            margin: 0 auto;
+            text-align: center;
+        }
+        nav {
+            width: 50%;
+            padding: 5px;
+            border: none;
+        }
+        .scroll-container {
+            width: 80%;
+            height: 80%;
+            overflow-y: scroll;
+            scroll-behavior: smooth;
+        }
+        .scroll-page {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            font-size: 5em;
+        }
+
+
         
     </style>
 
@@ -43,7 +72,17 @@
         <header>
             {% include header.html %}
         </header>
-        <h1 class="gradient-text centerText">About Me</h1>
+        <nav>
+            <a class="gradient-text centerText" href="#AboutMe">About Me</a>
+            <a class="gradient-text centerText" href="#Education">Education</a>
+            <a class="gradient-text centerText" href="#Experience">Experience</a>
+          </nav>
+          <div class="scroll-container">
+            <div class="scroll-page" id="AboutMe">About</div>
+            <div class="scroll-page" id="Education">Edu</div>
+            <div class="scroll-page" id="Experience">Work</div>
+          </div>
+          
         {{ content }}
         <br><br>
         <footer class="site-footer">

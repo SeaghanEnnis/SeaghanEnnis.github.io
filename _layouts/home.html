@@ -67,7 +67,9 @@
             -moz-background-clip: text;
             -moz-text-fill-color: transparent;
         }
-
+        .bodyWrapper{
+            padding: 5%;
+        }
         .centerText {
             text-align: center;
             margin: auto;
@@ -141,6 +143,7 @@
             {% include header.html %}
         </header>
         <br>
+        <div class="bodyWrapper">
         <nav>
             <a class="gradient-text centerText scroll-links" href="#AboutMe">
                 <h1>&ensp;About&ensp;</h1>
@@ -214,6 +217,14 @@
                 <p><strong>wGPA</strong> - 4.45</p>
             </div>
             <hr class="hr1" style="height: 7px;" />
+            <div class="scroll-page" id="Awards">
+                <br>
+                <h1 class="gradient-text">Awards</h1>
+                <h2>1</h2>
+                <hr>
+                <h2>2</h2>
+            </div>
+            <hr class="hr1" style="height: 7px;" />
             <div class="scroll-page" id="Service">
                 <br>
                 <h1 class="gradient-text">Service</h1>
@@ -227,6 +238,7 @@
                 <p><strong>Fundraisers</strong> - raised money and organized drives to donate items to other charities such as the Children's Hospital, Denver Rescue Mission, Catholic Charitities, Fountain Fire Department </p>
                 <p><strong>Service</strong> - provided boots on the ground help for other service organizations such as the Ronald McDonald House, Colorado Rescue Mission, Gods Pantry</p>
             </div>
+        </div>
 
         {{ content }}
         <footer class="site-footer">

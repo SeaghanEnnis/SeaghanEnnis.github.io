@@ -209,8 +209,10 @@
                     Then the message is ingested by our consolidation service and placed into a Neo4j Graphing database. From the graphing DB, we then could query data out through both APIs and Kafka to RAN Vendors.
                     Our product also featured a Workflow Engine through Comunda which will manage the flow the data that we sent out to Samsung, Mavenir, and Cisco. It would proceed as long as those vendors responded with success or it could halt until issues could be adressed and resolved.
                 </p>
+                <p>A PostgreSQL DB was used to hold active API authentication tokens, so that user sessions and service accounts could use our APIs in a secure and measured manner.</p>
                 <p><strong>Deployed - Infrastrure on Amazon Web Services across EC2, EKS (Kubernetes), Lambda (Serverless)</strong></p>
                 <p>We utilized AWS services primarily EC2s and EKS. I was the chief proponent of swapping our teams infrastructure to Kubernetes and personally developed the first of our microservices deployed on EKS.</p>
+                <p>I used a GitLab Pipeline integration system to apply, and update, Helm Chart Configurations (yaml) to the EKS Cluster.</p>
                 <p><strong>Produced - 5g Automation and Workflow System for the Orchestration of Cell Tower Deployments</strong></p>
                 <p>My team and I designed a graphing model of the businesses 5g infrastructure deployments, which scaled from large concepts like whole Regional Data Centers all the way down to the ports on a router.
                     After filling these models in our graphing database, we utilized a workflow engine to remotely install software, connect routes to servers to data centers, and enable testing of 5g on-air status.

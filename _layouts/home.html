@@ -136,7 +136,7 @@
 
         .hr1 {
             background: linear-gradient(to bottom right,rgb(0, 102, 255), rgba(5, 193, 251, 0.7), rgb(255, 255, 255));
-            height: 5px;
+            height: 7px;
             opacity: 1;
             border-radius: 75%;
         }
@@ -184,42 +184,47 @@
             </a>
         </nav>
         <br>
-            <hr class="hr1" style="height: 7px;" />
+            <hr class="hr1"/>
             <div class="scroll-page" id="AboutMe">
                 <br>
                 <h1 class="gradient-text">I am Seaghan Ennis</h1>
                 <div class="center-text">
                     <h4>Software Engineer, Optimist, Leader</h4>
-                    <p>I believe, first and foremost, in taking <b>accountability</b> for my goals, <b>pride</b> in my work, and <b>opportunity</b> where it presents itself.</p>
+                    <p> I am above an all an optimist who is ready to learn more.
+                        I believe in taking <b>accountability</b> for what I do, <b>pride</b> in my work, and <b>adventure</b> where it arises.
+                        </p>
                 </div>
             </div>
-            <hr class="hr1" style="height: 7px;" />
+            <hr class="hr1"/>
             <div class="scroll-page" id="Experience">
                 <br>
                 <h1 class="gradient-text">Experience</h1>
                 <h2>Dish Wireless</h2>
-                <h4>OSS Software Engineer <br>(June 2022 - Present)</h4>
+                <h4>OSS Software Engineer II<br>(May 2023 - Present)</h4>
+                <h4>OSS Software Engineer I<br>(June 2022 - April 2023)</h4>
                 <p><strong>Developed - Spring and Spring Boot Enterprise Java Applications</strong></p>
                 <p>My team and I integrated a Unified Inventory System and Deployment Orchestration Process into the companies workflow. 
                     Our product was the largest IT application within the company, which collected source data from dozens of integrating systems.
-                    Then used that collected data to automate the instantiation of 5G Cell Towers by further integrating with RAN Vendors including Samsung, Mavenir, and Cisco
+                    Then our product utilized that collected data to automate the instantiation of 5G Cell Towers by further integrating with RAN Vendors including Samsung, Mavenir, and Cisco
                     so that their hardware and software could be properly installed and configured.</p>
                 <p><strong>Utilized - Neo4j Graphing Database, PostgreSQL, Kafka Messaging Streams, REST API's, AWS</strong></p>
                 <p>To manage integrating with bllions of records split across dozens of sources of data and RAN Vendors, I assisted in the implementation of our Kafka data streams and the Java code which reads messages placed onto the bus by our sources.
                     Then the message is ingested by our consolidation service and placed into a Neo4j Graphing database. From the graphing DB, we then could query data out through both APIs and Kafka to RAN Vendors.
-                    Our product also featured a Workflow Engine through Comunda which will manage the flow the data that we sent out to Samsung, Mavenir, and Cisco. It would proceed as long as those vendors responded with success or it could halt until issues could be adressed and resolved.
+                    Our product also featured a Workflow Engine through Camunda which manages the flow the data that we sent out to Samsung, Mavenir, and Cisco. It would proceed as long as those vendors responded with success or it could halt until issues could be adressed and resolved.
                 </p>
                 <p>A PostgreSQL DB was used to hold active API authentication tokens, so that user sessions and service accounts could use our APIs in a secure and measured manner.</p>
                 <p><strong>Deployed - Infrastrure on Amazon Web Services across EC2, EKS (Kubernetes), Lambda (Serverless)</strong></p>
                 <p>We utilized AWS services primarily EC2s and EKS. I was the chief proponent of swapping our teams infrastructure to Kubernetes and personally developed the first of our microservices deployed on EKS.</p>
-                <p>I used a GitLab Pipeline integration system to apply, and update, Helm Chart Configurations (yaml) to the EKS Cluster.</p>
+                <p>I used a GitLab Pipeline integration system to apply, and update, Helm Chart Configurations (written in yaml) to the EKS Cluster.</p>
                 <p><strong>Produced - 5g Automation and Workflow System for the Orchestration of Cell Tower Deployments</strong></p>
                 <p>My team and I designed a graphing model of the businesses 5g infrastructure deployments, which scaled from large concepts like whole Regional Data Centers all the way down to the ports on a router.
                     After filling these models in our graphing database, we utilized a workflow engine to remotely install software, connect routes to servers to data centers, and enable testing of 5g on-air status.
                 </p>
                 <p><strong>Designed - Simple, Responsive UI to Interact with, View, Update, and Automate changes to Network Data</strong></p>
                 <p>The first microservice I deployed onto EKS was our 'Data Support Tool' designed to allow for rapid data entry and querying through a web based application and REST APIs.</p>
-                <p>Used a 'perspective' system to version data updates, manage conflicts, and roll back to a previous state as required.</p>
+                <p>Used a 'perspective' system to version data updates, manage conflicts, and roll back to a previous state as required. It also allowed us to create a data lock state (a Point of No Return).</p>
+                <p><strong>Kubernetes Microservices</strong></p>
+                <p>All of our applications (includng Java using Spring Framework, Angular, and Python) were containized using Docker and placed into EKS, an AWS Kuberenetes Service. The architecture of these applications allowed them to scale horazontally to meet demand.</p>
                 <hr>
                 <h2>DeMolay International</h2>
                 <h4>International Vice President, Youth Operations <br> (June 2020 - July 2021)</h4>
@@ -248,7 +253,7 @@
                 <p><strong>Saftey</strong></p>
                 <p>Maintained an orderly and safe environment for co-workers, clients, and self while working in the field.</p>
             </div>
-            <hr class="hr1" style="height: 7px;" />
+            <hr class="hr1"/>
             <div class="scroll-page" id="Education">
                 <br>
                 <h1 class="gradient-text">Education</h1>
@@ -273,7 +278,7 @@
                 <img src="{{site.baseurl}}/assets/images/Certified Cloud Practitioner Badge.png" class="awardImage">
                 <p>Earned in July of 2023</p>
             </div>
-            <hr class="hr1" style="height: 7px;" />
+            <hr class="hr1"/>
             <div class="scroll-page" id="Awards">
                 <br>
                 <h1 class="gradient-text">Awards</h1>
@@ -281,13 +286,17 @@
                 <h2>Dish IT Innovation Award - 2023</h2>
                 <p>Presented in 2023 for Leading, Designing, and Implementing a new Inventory UI Interface with Kubernetes</p>
                 <hr>
+                <img src="{{site.baseurl}}/assets/images/Dish Award CPAW.png" class="awardImage">
+                <h2>Dish IT Values Award - 2023 Q2</h2>
+                <p>Presented in 2023 Q2 for Leading, Onboarding, and Instructing a New Team of 10 Contractors</p>
+                <hr>
                 <h2>Grand Commanders Leadership's Award</h2>
                 <p>Presented in 2019</p>
                 <hr>
                 <h2>Great Plains Leadership Conference - First Staff</h2>
                 <p>Presented in 2018</p>
             </div>
-            <hr class="hr1" style="height: 7px;" />
+            <hr class="hr1"/>
             <div class="scroll-page" id="Service">
                 <br>
                 <h1 class="gradient-text">Service</h1>

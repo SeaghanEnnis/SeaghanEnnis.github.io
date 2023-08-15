@@ -211,9 +211,8 @@
                     <p>Then our product utilized that collected data to automate the instantiation of 5G Cell Towers by further integrating with RAN Vendors including Samsung, Mavenir, and Cisco,
                     so that their hardware and software could be properly installed and configured.</p>
                 <p><strong>Utilized - Neo4j Graphing Database, PostgreSQL, Kafka Messaging Streams, REST API's, AWS</strong></p>
-                <p>To manage integrating with bllions of records split across dozens of sources of data and RAN Vendors, I assisted in the implementation of our Kafka data streams and the Java code which reads messages placed onto the bus by our sources.
-                    Then the message is ingested by our consolidation service and placed into a Neo4j Graphing database. From the graphing DB, we then could query data out through both APIs and Kafka to RAN Vendors.
-                    Our product also featured a Workflow Engine through Camunda which manages the flow the data that we sent out to Samsung, Mavenir, and Cisco. It would proceed as long as those vendors responded with success or it could halt until issues could be adressed and resolved.
+                <p>To manage integrating with bllions of records split across dozens of sources of data and RAN Vendors, I assisted in the implementation of our Kafka data streams and the Java code which reads messages placed onto the bus by our sources. Then the message is consolidated by our ingestion service and placed into a Neo4j Graphing database. </p>
+                <p>From the graphing DB, we then could query data out through both APIs and Kafka to RAN Vendors. Our product also featured a Workflow Engine through Camunda which manages the flow the data that we sent out to Samsung, Mavenir, and Cisco. It would proceed as long as those vendors responded with success or it could halt until issues could be adressed and resolved.
                 </p>
                 <p>A PostgreSQL DB was used to hold active API authentication tokens, so that user sessions and service accounts could use our APIs in a secure and measured manner.</p>
                 <p><strong>Deployed - Infrastrure on Amazon Web Services across EC2, EKS (Kubernetes and Helm), Lambda (Serverless)</strong></p>

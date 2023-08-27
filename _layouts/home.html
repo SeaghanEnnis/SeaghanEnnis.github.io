@@ -142,9 +142,6 @@
         }
 
         h1 {
-            font-size: 4rem;
-        }
-        h1 {
             font-size: 3rem;
         }
 
@@ -193,9 +190,8 @@
                 <h1 class="gradient-text">I am Seaghan Ennis</h1>
                 <div class="center-text">
                     <h4>Software Engineer, Optimist, Leader</h4>
-                    <p> I am an optimist who is ready to learn more.
-                        I believe in taking <b>accountability</b> for what I do, <b>pride</b> in my work, and <b>adventure</b> where it arises.
-                        </p>
+                    <p> Thanks for stopping by! I am always excited to learn more and do more. If you have a new adventure for me don't hesistate to reach out. </p>
+                    <p>I have experience developing and implementing enterprise software applications, building solutions in the cloud, and leading teams to success.</p>
                 </div>
             </div>
             <hr class="hr1" style="height: 7px;" />
@@ -205,29 +201,30 @@
                 <h2>Dish Wireless</h2>
                 <h4>OSS Software Engineer II<br>(May 2023 - Present)</h4>
                 <h4>OSS Software Engineer I<br>(June 2022 - May 2023)</h4>
-                <p><strong>Developed - Spring and Spring Boot Enterprise Java Applications</strong></p>
+                <p><strong>Developed - Spring and Spring Boot Enterprise Java Applications and Microservices, Python Services</strong></p>
                 <p>My team and I integrated a Unified Inventory System and Deployment Orchestration Process into the companies workflow. 
-                    Our product was the largest IT application within the company, which collected source data from dozens of integrating systems.
-                    Then our product utilized that collected data to automate the instantiation of 5G Cell Towers by further integrating with RAN Vendors including Samsung, Mavenir, and Cisco,
+                    Our product was the largest IT application within the company, which collected source data from dozens of integrating systems.</p>
+                    <p>Then our product utilized that collected data to automate the instantiation of 5G Cell Towers by further integrating with RAN Vendors including Samsung, Mavenir, and Cisco,
                     so that their hardware and software could be properly installed and configured.</p>
                 <p><strong>Utilized - Neo4j Graphing Database, PostgreSQL, Kafka Messaging Streams, REST API's, AWS</strong></p>
-                <p>To manage integrating with bllions of records split across dozens of sources of data and RAN Vendors, I assisted in the implementation of our Kafka data streams and the Java code which reads messages placed onto the bus by our sources.
-                    Then the message is ingested by our consolidation service and placed into a Neo4j Graphing database. From the graphing DB, we then could query data out through both APIs and Kafka to RAN Vendors.
-                    Our product also featured a Workflow Engine through Camunda which manages the flow the data that we sent out to Samsung, Mavenir, and Cisco. It would proceed as long as those vendors responded with success or it could halt until issues could be adressed and resolved.
+                <p>To manage integrating with bllions of records split across dozens of sources of data and RAN Vendors, I assisted in the implementation of our Kafka data streams and the Java code which reads messages placed onto the bus by our sources. Then the message is consolidated by our ingestion service and placed into a Neo4j Graphing database. </p>
+                <p>From the graphing DB, we then could query data out through both APIs and Kafka to RAN Vendors. Our product also featured a Workflow Engine through Camunda which manages the flow the data that we sent out to Samsung, Mavenir, and Cisco. It would proceed as long as those vendors responded with success or it could halt until issues could be adressed and resolved.
                 </p>
                 <p>A PostgreSQL DB was used to hold active API authentication tokens, so that user sessions and service accounts could use our APIs in a secure and measured manner.</p>
-                <p><strong>Deployed - Infrastrure on Amazon Web Services across EC2, EKS (Kubernetes), Lambda (Serverless)</strong></p>
+                <p><strong>Deployed - Infrastrure on Amazon Web Services across EC2, EKS (Kubernetes and Helm), Lambda (Serverless)</strong></p>
                 <p>We utilized AWS services primarily EC2s and EKS. I was the chief proponent of swapping our teams infrastructure to Kubernetes and personally developed the first of our microservices deployed on EKS.</p>
-                <p>I used a GitLab Pipeline integration system to apply, and update, Helm Chart Configurations (written in yaml) to the EKS Cluster.</p>
+                <p>I used a GitLab Pipeline integration system to apply, and update, Helm Chart Configurations (written in yaml) to the EKS Clusters.</p>
+                <p>I configured AWS Network Load Balancers (NLBs) and Application Load Balancers (ALBs) infront of our Kubernetes Clusters for highly available applications with SSL/TLS Certificates for HTTPS conncetions</p>
                 <p><strong>Produced - 5g Automation and Workflow System for the Orchestration of Cell Tower Deployments</strong></p>
                 <p>My team and I designed a graphing model of the businesses 5g infrastructure deployments, which scaled from large concepts like whole Regional Data Centers all the way down to the ports on a router.
                     After filling these models in our graphing database, we utilized a workflow engine to remotely install software, connect routes to servers to data centers, and enable testing of 5g on-air status.
                 </p>
                 <p><strong>Designed - Simple, Responsive UI to Interact with, View, Update, and Automate changes to Network Data</strong></p>
                 <p>The first microservice I deployed onto EKS was our 'Data Support Tool' designed to allow for rapid data entry and querying through a web based application and REST APIs.</p>
-                <p>Used a 'perspective' system to version data updates, manage conflicts, and roll back to a previous state as required. It also allowed us to create a data lock state (a Point of No Return).</p>
-                <p><strong>Integrated - Kubernetes Microservices</strong></p>
+                <p>Used a 'perspective' system to version data updates, manage conflicts, and roll back to a previous state as required. It also allowed us to create a data lock state (a Point of No Return) when the site went on air.</p>
+                <p><strong>Integrated - Microservices</strong></p>
                 <p>All of our applications (includng Java using Spring Framework, Angular, and Python) were containized using Docker and placed into EKS, an AWS Kuberenetes Service. The architecture of these applications allowed them to scale horazontally to meet demand.</p>
+                <p>We designed applications that were subject to and complied with regulatory standards including PII and CPNI compliance, automated code vulnerability scaninning for CVE's, and artifact and image scanning for OS level vulnerabilites.</p>
                 <hr>
                 <h2>DeMolay International</h2>
                 <h4>International Vice President, Youth Operations <br> (June 2020 - July 2021)</h4>

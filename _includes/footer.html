@@ -1,39 +1,70 @@
-<link rel="stylesheet" href="/assets/css/main.css">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet"> 
-
 <style>
-    #BackgroundGradFooter {
-    background-image: linear-gradient(to top, rgb(0, 130, 255), rgba(0, 190, 255), rgb(255, 255, 255));
-    justify-content: center;
-  }
-  .centerText{
-      text-align: center;
-      justify-content: center;
-      margin: auto;
+    .footer-wrapper {
+        /* Matches the Slate theme: Dark Slate -> Lighter Slate */
+        background: linear-gradient(to top, #1e293b 0%, #0f172a 100%);
+        border-top: 1px solid #334155;
+        padding: 40px 0;
+        text-align: center;
+        width: 100%;
     }
-    .imageBlock{
-        display:block;
-        text-align:center;
-        justify-content: center
-    }
-.footerImage{
-    vertical-align:middle;
-    margin: 2%;
-    width:  40px;
-    height: 40px;
 
-}
+    .footer-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1.5rem;
+    }
+
+    .social-links {
+        display: flex;
+        gap: 25px; /* Space between icons */
+        justify-content: center;
+        align-items: center;
+    }
+
+    .footer-icon {
+        width: 32px;
+        height: 32px;
+        object-fit: contain;
+        transition: all 0.3s ease;
+        opacity: 0.8; /* Slightly muted by default */
+    }
+
+    /* Hover Effect: Scale up and full opacity */
+    .footer-icon:hover {
+        transform: translateY(-3px) scale(1.1);
+        opacity: 1;
+        filter: drop-shadow(0 0 5px rgba(56, 189, 248, 0.5)); /* Cyan glow */
+    }
+
+    .copyright-text {
+        color: #94a3b8; /* Muted gray text */
+        font-family: 'Inter', sans-serif;
+        font-size: 0.9rem;
+        margin: 0;
+    }
 </style>
 
-<div id = "BackgroundGradFooter">
-    <div class="imageBlock">
-        <a href="mailto:seaghan00@gmail.com" ><img src="{{site.baseurl}}/assets/images/EmailWhite.png" class="footerImage"></a>
-        <a href="https://github.com/SeaghanEnnis" ><img src="{{site.baseurl}}/assets/images/GithubWhite.png" class="footerImage"></a>
-        <a href="https://www.linkedin.com/in/seaghan-ennis" ><img src="{{site.baseurl}}/assets/images/LinkedinWhite.png" class="footerImage"></a>
-        <a href="https://www.instagram.com/seaghanennis" ><img src="{{site.baseurl}}/assets/images/InstagramWhite.png" class="footerImage"></a>
-        <a href=""><img src="{{site.baseurl}}/assets/images/Freemasonry.png" class="footerImage"></a>
-    </div>
-</div>
+<footer class="footer-wrapper">
+    <div class="footer-content">
+        <div class="social-links">
+            <a href="mailto:seaghan00@gmail.com" aria-label="Email">
+                <img src="{{site.baseurl}}/assets/images/EmailWhite.png" class="footer-icon" alt="Email">
+            </a>
+            <a href="https://github.com/SeaghanEnnis" target="_blank" aria-label="Github">
+                <img src="{{site.baseurl}}/assets/images/GithubWhite.png" class="footer-icon" alt="Github">
+            </a>
+            <a href="https://www.linkedin.com/in/seaghan-ennis" target="_blank" aria-label="LinkedIn">
+                <img src="{{site.baseurl}}/assets/images/LinkedinWhite.png" class="footer-icon" alt="LinkedIn">
+            </a>
+            <a href="https://www.instagram.com/seaghanennis" target="_blank" aria-label="Instagram">
+                <img src="{{site.baseurl}}/assets/images/InstagramWhite.png" class="footer-icon" alt="Instagram">
+            </a>
+            <a href="#" aria-label="Freemasonry">
+                <img src="{{site.baseurl}}/assets/images/Freemasonry.png" class="footer-icon" alt="Freemasonry">
+            </a>
+        </div>
+        
+        </div>
+</footer>

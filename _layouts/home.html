@@ -137,6 +137,84 @@
             text-align: center;
             color: var(--text-muted);
         }
+
+        .hero-header {
+            position: relative;
+            /* Matches the Slate theme from home.html */
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            min-height: 350px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-top: 40px;
+            padding-bottom: 100px; /* Extra padding for the curve */
+        }
+
+        .header-content {
+            z-index: 10;
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 160px;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 50%;
+            /* Cyan accent border */
+            border: 4px solid #38bdf8; 
+            /* Soft shadow for depth */
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.05);
+        }
+
+        .hero-title {
+            color: #f1f5f9; /* Off-white */
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 3rem;
+            margin: 0;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* SVG Curve Styling */
+        .curve-separator {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            transform: rotate(180deg);
+        }
+
+        .curve-separator svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 80px;
+        }
+
+        .curve-separator .shape-fill {
+            /* CRITICAL: This must match the body background of home.html (#0f172a) */
+            fill: #0f172a;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            .profile-img {
+                width: 120px;
+                height: 120px;
+            }
+        }
     </style>
 </head>
 

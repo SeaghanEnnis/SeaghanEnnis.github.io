@@ -1,377 +1,327 @@
 <!DOCTYPE html>
-<html lang="{{ site.lang | default: " en-US" }}">
+<html lang="{{ site.lang | default: "en-US" }}">
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     <title>{{ site.title }}</title>
-    <link rel="stylesheet" href="{{ " /assets/css/main.css" | relative_url }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
     <style>
-        #gradAbout {
-            height: 100px;
-            width: 100px;
-            background-image: linear-gradient(to bottom right, rgb(0, 102, 255), rgba(5, 193, 255), rgb(212, 235, 255));
-            border-radius: 50%;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-content: center;
-            align-items: center;
+        :root {
+            /* Dark Theme Variables */
+            --bg-dark: #0f172a;       /* Dark Slate */
+            --bg-card: #1e293b;       /* Lighter Slate */
+            --text-main: #f1f5f9;     /* Off-white */
+            --text-muted: #94a3b8;    /* Muted gray */
+            --accent: #38bdf8;        /* Sky Blue */
+            --accent-hover: #0ea5e9;
         }
 
-        #gradEducation {
-            height: 100px;
-            width: 100px;
-            background-image: linear-gradient(to bottom right, rgb(0, 102, 255), rgba(5, 193, 255), rgb(212, 235, 255));
-            border-radius: 50%;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-content: center;
-            align-items: center;
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
         }
 
-        #gradWork {
-            height: 100px;
-            width: 100px;
-            background-image: linear-gradient(to bottom right, rgb(0, 102, 255), rgba(5, 193, 255), rgb(212, 235, 255));
-            border-radius: 50%;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-content: center;
-            align-items: center;
+        /* Typography */
+        h1, h2, h3, h4 {
+            color: var(--text-main);
+            font-weight: 700;
         }
-
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background-image: linear-gradient(to bottom left, rgb(0, 102, 255), rgba(5, 193, 255), rgb(212, 235, 255));
-        }
-
-        a {
-            text-decoration: none;
-        }
-
-        .gradient-text {
-            text-decoration: none;
-            padding: 3px;
-            background-color: red;
-            background-image: linear-gradient(to bottom right, rgb(0, 102, 255), rgba(5, 193, 255), rgb(212, 235, 255));
-            background-size: 100%;
-            background-repeat: repeat;
+        
+        h1.hero-title {
+            font-size: 3.5rem;
+            background: linear-gradient(to right, #38bdf8, #818cf8);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            -moz-background-clip: text;
-            -moz-text-fill-color: transparent;
         }
 
-        .bodyWrapper {
-            padding: 2%;
-        }
-
-        .centerText {
-            text-align: center;
-            margin: auto;
-            text-decoration: none;
-        }
-
-        .awardImage {
-            vertical-align: middle;
-            margin: 2%;
-            width: 100px;
-            height: 100px;
-        }
-
-        .scrollWrapper {
-            height: 100vh;
-            overflow-y: scroll;
-            overflow-x: hidden;
-        }
-
-        footer {
-            width: 100%;
-        }
-
-
-        nav,
-        .scroll-container {
-            margin: 0 auto;
-            text-align: center;
-            -ms-overflow-style: none;
-            /* hide in  IE and Edge */
-            scrollbar-width: none;
-            /* hide in  Firefox */
-            text-decoration: none;
-        }
-
-        .scroll-container::-webkit-scrollbar {
-            display: none;
-            /*hide in chrome*/
-        }
-
-        nav {
-            display: flex;
-            width: 90%;
-            padding: 5px;
-            border: none;
-            flex-wrap: wrap;
-        }
-
-        .scroll-container {
-            width: 100%;
-            height: 80%;
-
-            overflow-y: scroll;
-            scroll-behavior: smooth;
-            padding: 10px;
-        }
-
-        .scroll-page {
-            align-items: center;
-            text-align: center;
-            min-height: 25%;
-        }
-
-        .hr1 {
-            background: linear-gradient(to bottom right, rgb(0, 102, 255), rgba(5, 193, 251, 0.7), rgb(255, 255, 255));
-            height: 7px;
-            opacity: 1;
-            border-radius: 75%;
-        }
-
-        h1 {
-            font-size: 3rem;
-        }
-
-        h4 {
+        .section-title {
             font-size: 2rem;
+            border-bottom: 2px solid var(--accent);
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
         }
 
         p {
-            font-size: 1.25rem;
+            color: var(--text-muted);
+        }
+
+        strong {
+            color: var(--text-main);
+        }
+
+        /* Navigation */
+        .navbar {
+            background-color: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #334155;
+        }
+        
+        .nav-link {
+            color: var(--text-muted) !important;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--accent) !important;
+        }
+
+        /* Cards */
+        .experience-card {
+            background-color: var(--bg-card);
+            border: 1px solid #334155;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: transform 0.2s;
+        }
+
+        .experience-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent);
+        }
+
+        /* Tech Pills */
+        .tech-pill {
+            background-color: rgba(56, 189, 248, 0.1);
+            color: var(--accent);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            display: inline-block;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Images */
+        .award-img {
+            width: 80px;
+            height: auto;
+            margin-bottom: 1rem;
+            filter: drop-shadow(0 0 5px rgba(255,255,255,0.1));
+        }
+
+        /* Diagram Placeholder styling */
+        .diagram-container {
+            background: #000;
+            border: 1px dashed #475569;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+            text-align: center;
+        }
+
+        /* Layout Utilities */
+        .page-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+            padding-top: 100px; /* Offset for fixed nav */
+        }
+        
+        section {
+            padding: 40px 0;
+        }
+
+        footer {
+            margin-top: 50px;
+            padding: 20px;
+            border-top: 1px solid #334155;
+            text-align: center;
+            color: var(--text-muted);
         }
     </style>
-
 </head>
 
 <body>
-    <div class="scrollWrapper">
-        <header>
-            {% include header.html %}
-        </header>
-        <br>
-        <div class="bodyWrapper">
-            <nav>
-                <a class="centerText" href="#AboutMe">
-                    <h1 class="gradient-text">About</h1>
-                </a>
-                <a class="centerText" href="#Experience">
-                    <h1 class="gradient-text">Experience</h1>
-                </a>
-                <a class="centerText" href="#Education">
-                    <h1 class="gradient-text">Education</h1>
-                </a>
-                <a class="centerText" href="#Certifications">
-                    <h1 class="gradient-text">Certifications</h1>
-                </a>
-                <a class="centerText" href="#Awards">
-                    <h1 class="gradient-text">Awards</h1>
-                </a>
-                <a class="centerText scroll-links" href="#Service">
-                    <h1 class="gradient-text">Service</h1>
-                </a>
-            </nav>
-            <br>
-            <hr class="hr1" style="height: 7px;" />
-            <div class="scroll-page" id="AboutMe">
-                <br>
-                <h1 class="gradient-text">I am Seaghan Ennis</h1>
-                <div class="center-text">
-                    <h4>Software Engineer, Optimist, Leader</h4>
-                    <p> Thanks for stopping by! I am always excited to learn more and do more. If you have a new
-                        adventure for me don't hesistate to reach out. </p>
-                    <p>I have experience developing and implementing enterprise software applications, building
-                        solutions in the cloud, and leading teams to success.</p>
-                </div>
-            </div>
-            <hr class="hr1" style="height: 7px;" />
-            <div class="scroll-page" id="Experience">
-                <br>
-                <h1 class="gradient-text">Experience</h1>
-                <h2>Dish Wireless</h2>
-                <h4>Senior Software Engineer<br>(May 2025 - Present)</h4>
-                <h4>Mid-Level Software Engineer<br>(May 2023 - May 2025)</h4>
-                <h4>Junior Software Engineer<br>(June 2022 - May 2023)</h4>
-                <p><strong>Developed - Spring and Spring Boot Enterprise Java Applications and Microservices, Python
-                        Services, Angular Front-End</strong></p>
-                <p>My team and I integrated a Unified Inventory System and Deployment Orchestration Process into the
-                    companies workflow.
-                    Our product was the largest IT application within the company, which collected source data from
-                    dozens of integrating systems.</p>
-                <p>Then our product utilized that collected data to automate the instantiation of 5G Cell Towers by
-                    further integrating with RAN Vendors including Samsung, Mavenir, and Cisco,
-                    so that their hardware and software could be properly installed and configured.</p>
-                <p><strong>Utilized - Neo4j Graphing Database, PostgreSQL, Kafka Messaging Streams, REST API's,
-                        AWS</strong></p>
-                <p>To manage integrating with bllions of records split across dozens of sources of data and RAN Vendors,
-                    I assisted in the implementation of our Kafka data streams and the Java code which reads messages
-                    placed onto the bus by our sources. Then the message is consolidated by our ingestion service and
-                    placed into a Neo4j Graphing database. </p>
-                <p>From the graphing DB, we then could query data out through both APIs and Kafka to RAN Vendors. Our
-                    product also featured a Workflow Engine through Camunda which manages the flow the data that we sent
-                    out to Samsung, Mavenir, and Cisco. It would proceed as long as those vendors responded with success
-                    or it could halt until issues could be adressed and resolved.
-                </p>
-                <p>A PostgreSQL DB was used to hold active API authentication tokens, so that user sessions and service
-                    accounts could use our APIs in a secure and measured manner.</p>
-                <p><strong>Deployed - Infrastrure on Amazon Web Services across EC2, EKS (Kubernetes and Helm), Lambda
-                        (Serverless)</strong></p>
-                <p>We utilized AWS services primarily EC2s and EKS. I was the chief proponent of swapping our teams
-                    infrastructure to Kubernetes and personally developed the first of our microservices deployed on
-                    EKS.</p>
-                <p>I used a GitLab Pipeline integration system to apply, and update, Helm Chart Configurations (written
-                    in yaml) to the EKS Clusters.</p>
-                <p>I configured AWS Network Load Balancers (NLBs) and Application Load Balancers (ALBs) infront of our
-                    Kubernetes Clusters for highly available applications with SSL/TLS Certificates for HTTPS
-                    conncetions</p>
-                <p><strong>Produced - 5g Automation and Workflow System for the Orchestration of Cell Tower
-                        Deployments</strong></p>
-                <p>My team and I designed a graphing model of the businesses 5g infrastructure deployments, which scaled
-                    from large concepts like whole Regional Data Centers all the way down to the ports on a router.
-                    After filling these models in our graphing database, we utilized a workflow engine to remotely
-                    install software, connect routes to servers to data centers, and enable testing of 5g on-air status.
-                </p>
-                <p><strong>Designed - Simple, Responsive UI to Interact with, View, Update, and Automate changes to
-                        Network Data</strong></p>
-                <p>The first microservice I deployed onto EKS was our 'Data Support Tool' designed to allow for rapid
-                    data entry and querying through a web based application and REST APIs.</p>
-                <p>Used a 'perspective' system to version data updates, manage conflicts, and roll back to a previous
-                    state as required. It also allowed us to create a data lock state (a Point of No Return) when the
-                    site went on air.</p>
-                <p><strong>Integrated - Microservices</strong></p>
-                <p>All of our applications (includng Java using Spring Framework, Angular, and Python) were containized
-                    using Docker and placed into EKS, an AWS Kuberenetes Service. The architecture of these applications
-                    allowed them to scale horazontally to meet demand.</p>
-                <p>We designed applications that were subject to and complied with regulatory standards including PII
-                    and CPNI compliance, automated code vulnerability scaninning for CVE's, and artifact and image
-                    scanning for OS level vulnerabilites.</p>
-                <hr>
-                <h2>DeMolay International</h2>
-                <h4>International Vice President, Youth Operations <br> (June 2020 - July 2021)</h4>
-                <p><strong>Board of Directors</strong></p>
-                <p>Served on the Board of Directors, representing over 10,000 Class 5 Members.</p>
-                <p><strong>Elected</strong></p>
-                <p>By a Parliamentary Congress of 106 delegates from every US State, Brazil, Romania, Canada,
-                    Austrailia, Italy, and Greece.</p>
-                <p><strong>Directed</strong></p>
-                <p>Oversaw eleven distinct commitees who produced learning materials, new rules and regulations, and
-                    membership incentives.</p>
-                <p><strong>Led</strong></p>
-                <p>Helped the next generation of young leaders, to find in themselves, that opprotunity for personal
-                    growth and morality, which adorns our youth.</p>
-                <hr>
-                <h2>Green Empire Tree Service</h2>
-                <h4>Woodchipper Operator <br> (July 2021 - May 2022)</h4>
-                <p><strong>Team Work</strong></p>
-                <p>Worked in small crews to service, beautify, or cut down trees on residential and comercial
-                    properties.</p>
-                <p><strong>Operation</strong></p>
-                <p>Used tools and heavy machines such as chainsaws and woodchippers.</p>
-                <p><strong>Saftey</strong></p>
-                <p>Maintained an orderly and safe environment for co-workers, clients, and self while working in the
-                    field.</p>
-                <hr>
-                <h2>Beacon Plumbing</h2>
-                <h4>Apprentice Plumber <br> (March 2018 - Jan 2019)</h4>
-                <p><strong>Precision and Quality</strong></p>
-                <p>Cut and fit Pex, PVC, Copper, and Cast Iron Pipes according to Federal, State, and County standards
-                    and laws.</p>
-                <p><strong>Saftey</strong></p>
-                <p>Maintained an orderly and safe environment for co-workers, clients, and self while working in the
-                    field.</p>
-            </div>
-            <hr class="hr1" style="height: 7px;" />
-            <div class="scroll-page" id="Education">
-                <br>
-                <h1 class="gradient-text">Education</h1>
-                <h2>University of Colorado - Colorado Springs</h2>
-                <h4>Bachelors of Computer Science (Graduated May 2022)</h4>
-                <p><strong>GPA</strong> - 3.97</p>
-                <p>President's List 2020, 2021, and 2022</p>
-                <hr>
-                <h2>Pikes Peak Community College</h2>
-                <h4>Associates of Science (Graduated May 2019)</h4>
-                <p><strong>GPA</strong> - 3.86</p>
-                <p>Deans's List 2018 and President's List 2017, 2019</p>
-                <hr>
-                <h2>Pikes Peak Early College</h2>
-                <h4>High School Diploma (Graduated May 2018)</h4>
-                <p><strong>wGPA</strong> - 4.45</p>
-            </div>
-            <hr class="hr1" style="height: 7px;" />
-            <div class="scroll-page" id="Certifications">
-                <br>
-                <h1 class="gradient-text">Certifications</h1>
-                <h2>AWS Certified Solutions Architect</h2>
-                <img src="{{site.baseurl}}/assets/images/Solutions Architect Badge.png" class="awardImage">
-                <p>Earned in January of 2024</p>
-                <hr>
-                <h2>AWS Certified Cloud Practitioner</h2>
-                <img src="{{site.baseurl}}/assets/images/Certified Cloud Practitioner Badge.png" class="awardImage">
-                <p>Earned in July of 2023</p>
-            </div>
-            <hr class="hr1" style="height: 7px;" />
-            <div class="scroll-page" id="Awards">
-                <br>
-                <h1 class="gradient-text">Awards</h1>
-                <img src="{{site.baseurl}}/assets/images/Dish Award Innovation.png" class="awardImage">
-                <h2>Dish IT Innovation Award - 2023</h2>
-                <p>Presented in 2023 for Leading, Designing, and Implementing a new Inventory UI Interface with
-                    Kubernetes</p>
-                <hr>
-                <img src="{{site.baseurl}}/assets/images/Dish Award CPAW.png" class="awardImage">
-                <h2>Dish IT Values Award - 2023 Q2</h2>
-                <p>Presented in 2023 Q2 for Leading, Onboarding, and Instructing a New Team of 10 Contractors</p>
-                <hr>
-                <h2>Grand Commanders Leadership's Award</h2>
-                <p>Presented in 2019</p>
-                <hr>
-                <h2>Great Plains Leadership Conference - First Staff</h2>
-                <p>Presented in 2018</p>
-            </div>
-            <hr class="hr1" style="height: 7px;" />
-            <div class="scroll-page" id="Service">
-                <br>
-                <h1 class="gradient-text">Service</h1>
-                <h2>Freemasonry</h2>
-                <p><strong>Fraternity</strong> - A proud member of the longest standing Fraternity, teaching chairity,
-                    morality, and compassion</p>
-                <p><strong>Morality</strong> - A foundation for good, honest living through self-reflection and the
-                    desire for community</p>
-                <p><strong>Charity</strong> - Service to the community, aid to the disenfranchised through fundraisers
-                    for American Red Cross, Glenn-Monroe Scholarships, and more </p>
-                <hr>
-                <h2>Order of DeMolay</h2>
-                <p><strong>Built</strong> - Strengthened the leadership skills and morality of young men, including in
-                    myself </p>
-                <p><strong>Fundraisers</strong> - Raised money and organized drives to donate items to other charities
-                    such as the Children's Hospital, Denver Rescue Mission, Catholic Charitities, and the Fountain Fire
-                    Department </p>
-                <p><strong>Service</strong> - Provided boots on the ground help for other service organizations such as
-                    the Ronald McDonald House, Colorado Rescue Mission, Gods Pantry</p>
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#" style="color: var(--accent); font-weight: bold;">SE</a>
+            <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#About">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#Experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#Education">Education</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#Awards">Awards</a></li>
+                </ul>
             </div>
         </div>
+    </nav>
 
-        {{ content }}
-        <footer class="site-footer">
+    <div class="container page-wrapper">
+        
+        <section id="About" class="text-center">
+            <h1 class="hero-title">Seaghan Ennis</h1>
+            <h3 class="mb-4" style="color: var(--text-muted);">Senior Software Engineer & Cloud Architect</h3>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <p class="lead">
+                        Specializing in <strong>Cloud-Native Architectures</strong>, <strong>Enterprise Java</strong>, and <strong>High-Scale Data Integration</strong>. 
+                        I build resilient systems that transform complex data streams into actionable network intelligence.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="Experience">
+            <h2 class="section-title">Professional Experience</h2>
+
+            <div class="experience-card">
+                <div class="d-flex justify-content-between align-items-start flex-wrap">
+                    <div>
+                        <h3>Dish Wireless</h3>
+                        <h5 style="color: var(--accent);">Senior Software Engineer</h5>
+                    </div>
+                    <div class="text-end text-muted">
+                        <div>May 2025 - Present</div>
+                        <small>Prev: Mid-Level ('23-'25), Junior ('22-'23)</small>
+                    </div>
+                </div>
+                
+                <div class="mt-3 mb-4">
+                    <span class="tech-pill">Java Spring Boot</span>
+                    <span class="tech-pill">AWS EKS</span>
+                    <span class="tech-pill">Kafka</span>
+                    <span class="tech-pill">Neo4j</span>
+                    <span class="tech-pill">Python</span>
+                </div>
+
+                <p>Lead engineer for the Unified Inventory System, integrating dozens of source systems to automate the deployment of 5G infrastructure.</p>
+                
+                <ul>
+                    <li class="mb-2"><strong>Unified, Federated Network Inventory System:</strong> Architected a unified inventory system for network devices, RAN, and data centers, utilizing Kafka data streams to ingest external sources into a Neo4j graph database.</li>
+                     <div class="diagram-container">
+                                                <small class="d-block text-muted mt-2">Conceptual Architecture: Ingesting Data Streams into Graph DB</small>
+                    </div>
+                    <li class="mb-2"><strong>Cloud Infrastructure & EKS Transition:</strong> Orchestrated a transition from Docker to AWS EKS using Helm, reducing deployment downtime by 60%; managed full-stack infrastructure including Lambda, EC2, Route 53, and ACM.</li>
+                    <li class="mb-2"><strong>Enterprise REST APIs:</strong> Engineered Java and Python REST APIs to integrate high-scale data with ORAN vendors including Cisco, Samsung, and Mavenir.</li>
+                    <li class="mb-2"><strong>Network Automation:</strong> Automated configuration design for over 20,000 Samsung ORAN cell towers, compute nodes, and radios, eliminating hundreds of manual design hours.</li>
+                     <div class="diagram-container">
+                                                  <small class="d-block text-muted mt-2">5G ORAN Architecture Context</small>
+                    </div>
+                    <li class="mb-2"><strong>Data Support Tooling:</strong> Developed a version-controlled data management application allowing technicians to modify and rollback cell tower configurations during physical installation.</li>
+                </ul>
+            </div>
+
+            <div class="experience-card">
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <h3>DeMolay International</h3>
+                        <h5 style="color: var(--accent);">International Vice President, Youth Operations</h5>
+                    </div>
+                    <span class="text-muted">Jun 2020 - Jul 2021</span>
+                </div>
+                <p class="mt-3">Elected by a parliamentary congress representing 106 delegates globally to serve on the Board of Directors.</p>
+                <ul>
+                    <li>Oversaw eleven distinct committees producing learning materials and regulatory frameworks for 10,000+ members.</li>
+                    <li>Directed strategic initiatives for membership growth and leadership development across international chapters.</li>
+                </ul>
+            </div>
+
+            <div class="experience-card">
+                <h3>Additional Work History</h3>
+                <p class="mb-3"><em>Prior experience in demanding field roles demonstrating strong work ethic, safety compliance, and team collaboration.</em></p>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h6 style="color: var(--text-main);">Green Empire Tree Service</h6>
+                        <p class="small">Woodchipper Operator | 2021 - 2022</p>
+                    </div>
+                    <div class="col-md-6">
+                        <h6 style="color: var(--text-main);">Beacon Plumbing</h6>
+                        <p class="small">Apprentice Plumber | 2018 - 2019</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr style="border-color: #334155;">
+
+        <section id="Education">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2 class="section-title">Education</h2>
+                    <div class="mb-4">
+                        <h4>University of Colorado - Colorado Springs</h4>
+                        <p class="mb-0"><strong>B.S. Computer Science</strong></p>
+                        <p class="text-muted">Graduated May 2022 | GPA: 3.97</p>
+                    </div>
+                    <div>
+                        <h4>Pikes Peak Community College</h4>
+                        <p class="mb-0"><strong>A.S. Science</strong></p>
+                        <p class="text-muted">Graduated May 2019 | GPA: 3.86</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h2 class="section-title">Certifications</h2>
+                    <div class="d-flex align-items-center mb-3">
+                        <img src="{{site.baseurl}}/assets/images/Solutions Architect Badge.png" class="award-img me-3" alt="AWS SA Badge">
+                        <div>
+                            <h5 class="mb-0">AWS Certified Solutions Architect</h5>
+                            <small class="text-muted">Issued Jan 2024</small>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <img src="{{site.baseurl}}/assets/images/Certified Cloud Practitioner Badge.png" class="award-img me-3" alt="AWS CP Badge">
+                        <div>
+                            <h5 class="mb-0">AWS Certified Cloud Practitioner</h5>
+                            <small class="text-muted">Issued July 2023</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="Awards">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2 class="section-title">Awards</h2>
+                    <ul class="list-unstyled">
+                        <li class="mb-3">
+                            <strong>Dish IT Innovation Award (2023)</strong><br>
+                            For leading the design and implementation of the new Kubernetes-based Inventory UI.
+                        </li>
+                        <li class="mb-3">
+                            <strong>Dish IT Values Award (2023 Q2)</strong><br>
+                            For leadership in onboarding and instructing a team of 10 contractors.
+                        </li>
+                        <li class="mb-3">
+                            <strong>Grand Commanders Leadership Award (2019)</strong>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h2 class="section-title">Service</h2>
+                    <div class="mb-3">
+                        <h5 style="color: var(--accent);">Freemasonry</h5>
+                        <p class="small">Active member focusing on charity, morality, and community service. Organized fundraisers for American Red Cross and local scholarships.</p>
+                    </div>
+                    <div>
+                        <h5 style="color: var(--accent);">Order of DeMolay</h5>
+                        <p class="small">Provided logistical support for charitable organizations including The Children's Hospital and Denver Rescue Mission.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            {{ content }}
             {% include footer.html %}
+            <p class="mt-3">&copy; {{ site.time | date: '%Y' }} Seaghan Ennis. All rights reserved.</p>
         </footer>
     </div>
-</body>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+</body>
 </html>

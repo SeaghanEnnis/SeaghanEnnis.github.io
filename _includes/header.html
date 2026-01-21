@@ -1,34 +1,54 @@
 <link rel="stylesheet" href="/assets/css/main.css">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;700&display=swap" rel="stylesheet"> 
 
 <style>
-
-    #BackgroundGradHeader {
-      height: 300px;
-      background-image: linear-gradient(to bottom right, rgb(0, 130, 255), rgba(0, 190, 255), rgb(255, 255, 255));
-    }
-
-    body{
-        background-color: black;
-        color: white;
-        margin: 0;
-    }
-
-    section{
+    /* Scoped styles for the header only */
+    .hero-header {
         position: relative;
+        /* Matches the Slate theme from home.html */
+        background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+        min-height: 350px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         align-items: center;
-        min-height: 300px;
-    }
-    
-    .centerText{
-      text-align: center;
-      margin: auto;
+        padding-top: 40px;
+        padding-bottom: 100px; /* Extra padding for the curve */
     }
 
-    .curve {
+    .header-content {
+        z-index: 10;
+        text-align: center;
+    }
+
+    .profile-img {
+        width: 160px;
+        height: 160px;
+        object-fit: cover;
+        border-radius: 50%;
+        /* Cyan accent border */
+        border: 4px solid #38bdf8; 
+        /* Soft shadow for depth */
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+        margin-bottom: 20px;
+        transition: transform 0.3s ease;
+    }
+
+    .profile-img:hover {
+        transform: scale(1.05);
+    }
+
+    .hero-title {
+        color: #f1f5f9; /* Off-white */
+        font-family: 'Inter', sans-serif;
+        font-weight: 700;
+        font-size: 3rem;
+        margin: 0;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    /* SVG Curve Styling */
+    .curve-separator {
         position: absolute;
         bottom: 0;
         left: 0;
@@ -38,30 +58,39 @@
         transform: rotate(180deg);
     }
 
-    .curve svg {
+    .curve-separator svg {
         position: relative;
         display: block;
         width: calc(100% + 1.3px);
+        height: 80px;
     }
 
-    .curve .shape-fill {
-        fill: #FFFFFF;
+    .curve-separator .shape-fill {
+        /* CRITICAL: This must match the body background of home.html (#0f172a) */
+        fill: #0f172a;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .hero-title {
+            font-size: 2rem;
+        }
+        .profile-img {
+            width: 120px;
+            height: 120px;
+        }
     }
 </style>
 
-<section>
-    <div id = "BackgroundGradHeader">
-        <div class="centerText">
-            <img src="{{site.baseurl}}/assets/images/ProfilePic2.jpg" style="vertical-align:middle;border-color: #ffffff00;border-radius: 49% !important; margin:15px" width = "150" height = "150">
-            <h1 style="color:white;text-shadow: 0 0 7px black;">Seaghan Ennis</h1>
-        </div>
+<section class="hero-header">
+    <div class="header-content">
+        <img src="{{site.baseurl}}/assets/images/ProfilePic2.jpg" alt="Profile Picture" class="profile-img">
+        <h1 class="hero-title">Seaghan Ennis</h1>
+    </div>
 
-        <div class="curve">
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 1 1200 120" preserveAspectRatio="none">
-                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
-            </svg>
-        </div>
+    <div class="curve-separator">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+        </svg>
     </div>
 </section>
-
-
